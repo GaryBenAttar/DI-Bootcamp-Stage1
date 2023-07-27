@@ -1,0 +1,19 @@
+.col-blue {
+  color: blue;
+}
+
+#div1 li {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#div2 #p1 {
+  background-color: pink;
+  color: white;
+}
+
+#div2 #p2 {
+  background-color: lightblue;
+  padding: 20px;
+  margin: 30px;
+}
