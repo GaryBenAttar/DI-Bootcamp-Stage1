@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" charset="utf-8"></script>
     <style>
       button {
         width: 70px;
@@ -12,24 +13,138 @@
     </style>
   </head>
   <body>
-    <button type="button" name="button" onclick="number(1);">1</button>
-    <button type="button" name="button" onclick="number(2);">2</button>
-    <button type="button" name="button" onclick="number(3);">3</button>
-    <br />
-    <button type="button" name="button" onclick="number(4);">4</button>
-    <button type="button" name="button" onclick="number(5);">5</button>
-    <button type="button" name="button" onclick="number(6);">6</button>
-    <br />
-    <button type="button" name="button" onclick="number(7);">7</button>
-    <button type="button" name="button" onclick="number(8);">8</button>
-    <button type="button" name="button" onclick="number(9);">9</button>
-    <button type="button" name="button" onclick="number(0);">0</button>
-    <br />
-    <button type="button" name="button" onclick="operator('+');">+</button>
-    <button type="button" name="button" onclick="operator('-');">-</button>
-    <button type="button" name="button" onclick="operator('*');">*</button>
-    <button type="button" name="button" onclick="operator('/');">/</button>
-    <button type="button" name="button" onclick="equal();">=</button>
-    <script src="js/main.js" charset="utf-8"></script>
+    <section class="calculator">
+      <button
+        class="button__num button__num-1"
+        type="button"
+        name="button"
+        onclick="number(1);"
+      >
+        1
+      </button>
+      <button
+        class="button__num button__num-2"
+        type="button"
+        name="button"
+        onclick="number(2);"
+      >
+        2
+      </button>
+      <button
+        class="button__num button__num-3"
+        type="button"
+        name="button"
+        onclick="number(3);"
+      >
+        3
+      </button>
+      <br />
+      <button
+        class="button__num button__num-4"
+        type="button"
+        name="button"
+        onclick="number(4);"
+      >
+        4
+      </button>
+      <button
+        class="button__num button__num-5"
+        type="button"
+        name="button"
+        onclick="number(5);"
+      >
+        5
+      </button>
+      <button
+        class="button__num button__num-6"
+        type="button"
+        name="button"
+        onclick="number(6);"
+      >
+        6
+      </button>
+      <br />
+      <button
+        class="button__num button__num-7"
+        type="button"
+        name="button"
+        onclick="number(7);"
+      >
+        7
+      </button>
+      <button
+        class="button__num button__num-8"
+        type="button"
+        name="button"
+        onclick="number(8);"
+      >
+        8
+      </button>
+      <button
+        class="button__num button__num-9"
+        type="button"
+        name="button"
+        onclick="number(9);"
+      >
+        9
+      </button>
+      <button
+        class="button__num button__num-0"
+        type="button"
+        name="button"
+        onclick="number(0);"
+      >
+        0
+      </button>
+      <button
+        class="button__num button__num-10"
+        type="button"
+        name="button"
+        onclick="number('.');"
+      >
+        .
+      </button>
+      <br />
+      <button
+        class="button__operator button__operator-0"
+        type="button"
+        name="button"
+        onclick="operator('+');"
+      >
+        +
+      </button>
+      <button
+        class="button__operator button__operator-1"
+        type="button"
+        name="button"
+        onclick="operator('-');"
+      >
+        -
+      </button>
+      <button
+        class="button__operator button__operator-2"
+        type="button"
+        name="button"
+        onclick="operator('*');"
+      >
+        *
+      </button>
+      <button
+        class="button__operator button__operator-3"
+        type="button"
+        name="button"
+        onclick="operator('/');"
+      >
+        /
+      </button>
+      <button
+        class="button__operator button__operator-4"
+        type="button"
+        name="button"
+        onclick="equal();"
+      >
+        =
+      </button>
+    </section>
   </body>
 </html>
