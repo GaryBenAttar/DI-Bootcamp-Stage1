@@ -240,3 +240,52 @@ console.log(changeEnough(4.25, [25, 20, 5, 0]));
 // Call the function totalVacationCost()
 
 // Bonus: Instead of using a prompt inside the 3 first functions, only use a prompt inside the totalVacationCost() function. You need to change the 3 first functions, accordingly.
+
+const hotelCost = function (nights) {
+  return nights * 140;
+};
+
+const planeRideCost = function (destination) {
+  if (destination === "Paris") {
+    return 220;
+  } else if (destination === "London") {
+    return 183;
+  } else {
+    return 300;
+  }
+};
+
+const rentalCarCost = function (carDays) {
+  if (carDays < 11) {
+    return carDays * 40;
+  } else {
+    return carDays * 40 * 0.95;
+  }
+};
+
+const totalVacationCost = function () {
+  let carDays = "";
+  do {
+    carDays = prompt("How many days would you like to rent a car?");
+  } while (isNaN(carDays));
+
+  let nights = "";
+  do {
+    nights = prompt("How many nights would you like to stay in the hotel?");
+  } while (isNaN(nights));
+
+  let destination = "";
+  do {
+    destination = prompt("Where would you like to fly?");
+  } while (!isNaN(destination));
+
+  console.log(
+    `The total vacation cost is ${
+      rentalCarCost(carDays) + hotelCost(nights) + planeRideCost(destination)
+    }. The car cost: ${rentalCarCost(carDays)}, the hotel cost: ${hotelCost(
+      nights
+    )}, the plane tickets cost: ${planeRideCost(destination)}.`
+  );
+};
+
+totalVacationCost();
