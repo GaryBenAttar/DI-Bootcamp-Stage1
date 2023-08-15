@@ -24,9 +24,9 @@
 // Add the classes university and attendance to the first <ul>.
 
 const container = document.getElementById("container");
-console.log("container", container);
+console.log("container:", container);
 
-const lists = document.querySelectorAll(".list");
+let lists = document.querySelectorAll(".list");
 
 lists[0].children[1].textContent = "Richard";
 
@@ -53,20 +53,23 @@ lists.forEach((list) => (list.firstElementChild.textContent = "Gary"));
 
 // Bonus: If the background color of the div is “light blue”, alert “Hello x and y” (x and y are the users in the div).
 
-// let divCache = document.querySelector("div");
-// document.getElementsByTagName("div").style.color = "blue";
+document.getElementsByTagName("div")[1].style.backgroundColor = "LightBlue";
+document.getElementsByTagName("div")[1].style.padding = "5px";
+document.getElementsByTagName("li")[4].style.display = "none";
+document.getElementsByTagName("li")[5].style.border = "solid";
+document.querySelector("body").style.fontFamily = "Arial";
 
 // 🌟 Exercise 3 : Change The Navbar
 // Instructions
-// <div id="navBar">
-//     <ul>
-//         <li><a href="#">Profile</a></li>
-//         <li><a href="#">Home</a></li>
-//         <li><a href="#">My Friends</a></li>
-//         <li><a href="#">Messenger</a></li>
-//         <li><a href="#">My Pics</a></li>
-//     </ul>
-// </div>
+/* <div id="navBar">
+    <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">My Friends</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">My Pics</a></li>
+    </ul>
+</div> */
 
 // Add the code above, to your HTML file
 
@@ -79,6 +82,14 @@ lists.forEach((list) => (list.firstElementChild.textContent = "Gary"));
 // Finally, append this updated list node to the unordered list (<ul>), using the appendChild method.
 
 // Use the firstElementChild and the lastElementChild properties to retrieve the first and last <li> elements from their parent element (<ul>). Display the text of each link. (Hint: use the textContent property).
+
+const navbar = document.getElementById("navBar");
+navbar.setAttribute("id", "socialNetworkNavigation");
+const newLi = document.createElement("li");
+newLi.textContent = "Logout";
+document
+  .getElementById("socialNetworkNavigation")
+  .children[0].appendChild(newLi);
 
 // Exercise 4 : My Book List
 // Instructions
@@ -102,3 +113,62 @@ lists.forEach((list) => (list.firstElementChild.textContent = "Gary"));
 // Example: HarryPotter written by JKRolling.
 // The width of the image has to be set to 100px.
 // If the book is already read. Set the color of the book’s details to red.
+
+let allBooks = [
+  {
+    title: "Harry Potter",
+    author: "JK Rowling",
+    image: "img/harrypotter.jpg",
+    alreadyRead: true,
+  },
+  {
+    title: "The 10x Rule",
+    author: "Grant Cardone",
+    image: "img/10rule.jpg",
+    alreadyRead: false,
+  },
+];
+
+const bookList = document.querySelector(".listBooks");
+const bookTable = document.createElement("table");
+
+const newTr = function () {
+  const tr = document.createElement("tr");
+  bookList.appendChild(bookTable);
+  bookTable.appendChild(tr);
+};
+
+const newTh = function (str) {
+  const th = document.createElement("th");
+  th.textContent = `${str}`;
+  bookTable.lastChild.appendChild(th);
+};
+
+const newTd = function (i, str) {
+  const td = document.createElement("td");
+  const allBooksId = str.toLowerCase();
+  bookTable.lastChild.appendChild(td);
+  if (allBooks[i].alreadyRead === true) {
+    td.style.color = "red";
+  }
+  if (allBooksId === "image") {
+    const img = document.createElement("img");
+    img.setAttribute("src", allBooks[i][allBooksId]);
+    td.appendChild(img);
+    img.style.width = "100px";
+  } else {
+    td.textContent = allBooks[i][allBooksId];
+  }
+};
+
+newTr();
+newTh("Title");
+newTh("Autor");
+newTh("Image");
+
+for (let i = 0; i < allBooks.length; i++) {
+  newTr();
+  newTd(i, "Title");
+  newTd(i, "Author");
+  newTd(i, "Image");
+}
