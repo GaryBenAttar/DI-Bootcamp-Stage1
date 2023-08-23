@@ -31,14 +31,12 @@
 const target = document.getElementById("target");
 const box = document.getElementById("box");
 
-box.addEventListener("dragstart", function dragStart(e) {
+target.addEventListener("dragover", (e) => {
   e.preventDefault();
-  let selected = e.target;
-  selected.addEventListener("dragover", function (e) {
-    e.preventDefault();
-  });
-  target.addEventListener("drop", function (e) {
-    e.preventDefault();
-    rightBox.appendChild(selected);
-  });
+  console.log("dragover");
+});
+
+target.addEventListener("drop", () => {
+  console.log("dropped");
+  target.appendChild(box);
 });
