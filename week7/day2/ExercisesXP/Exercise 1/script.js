@@ -109,3 +109,5 @@
 // // #5.1 - run the code in the console
 // // #5.2 What will happen if the variable is declared
 // // with const instead of let ?
+
+// Prediction: Same thing happens because the variable is not reassigned.
