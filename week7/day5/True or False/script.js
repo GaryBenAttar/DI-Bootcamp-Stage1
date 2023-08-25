@@ -10,13 +10,9 @@
 // allTruthy(5, 4, 3, 2, 1, 0)
 
 const allTruthy = function (...values) {
-  let i = 0;
-
-  values.forEach((e) => {
-    if (!e) i++;
+  return !values.some((v) => {
+    return !v;
   });
-
-  return i == 0 ? true : false;
 };
 
 console.log(allTruthy(true, true, true));
