@@ -50,6 +50,7 @@ const cloneGroceries = () => {
 };
 
 cloneGroceries();
+
 // We will not see the modification in the user variable because we passed the user by value.
 // We will see the modification in the shopping object becaus4e it is passed by reference. shopping is the copy of the groceries object.
 // We will see the modification in the shopping object for the exact same reason.

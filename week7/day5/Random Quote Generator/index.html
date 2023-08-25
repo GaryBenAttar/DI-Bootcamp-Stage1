@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="script.js"></script>
+    <title>Week 7 Day 5 Random Quote Generator</title>
+  </head>
+  <body>
+    <button class="generate__quote">Generate Quote</button>
+    <section id="quote__box">
+      <q id="quote"></q>
+      <p id="author"></p>
+    </section>
+
+    <form id="new__quotes">
+      <label for="new__quote">Add a new quote:</label
+      ><input type="text" name="new__quote" />
+      <label for="new__author">Author:</label
+      ><input type="text" name="new__author" />
+      <input type="submit" />
+    </form>
+    <br />
+    <button class="numChar1">How many characters? (spaces included)</button>
+    <button class="numChar2">How many characters? (spaces not included)</button>
+    <button class="numWord">How many words?</button>
+    <button class="likeBtn">Like</button>
+  </body>
+</html>
