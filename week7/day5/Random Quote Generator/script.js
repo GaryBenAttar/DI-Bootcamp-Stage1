@@ -60,6 +60,27 @@ let quotes = [
     author: "Maurice Switzer",
     likes: 0,
   },
+  {
+    id: 5,
+    quote:
+      "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.",
+    author: "Albert Einstein",
+    likes: 0,
+  },
+  {
+    id: 6,
+    quote:
+      "I speak to everyone in the same way, whether he is the garbage man or the president of the university.",
+    author: "Albert Einstein",
+    likes: 0,
+  },
+  {
+    id: 7,
+    quote:
+      "Great spirits have always encountered violent opposition from mediocre minds.",
+    author: "Albert Einstein",
+    likes: 0,
+  },
 ];
 
 // Part I:
@@ -86,7 +107,7 @@ function generateQuote() {
 
 // Part II:
 
-const form = document.forms[0];
+const form = document.forms.new__quotes;
 const newQuote = form.elements.new__quote;
 const newAuthor = form.elements.new__author;
 
@@ -138,3 +159,36 @@ function addLike() {
   quotes[idTracker.id].likes++;
   console.log(quotes);
 }
+
+// Part III:
+
+const authorFilter = document.forms.author__filter;
+const authorInput = authorFilter.elements.chosen__author;
+
+authorFilter.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  for (let i = 0; i < quotes.length; i++) {
+    if (quotes[i].author === authorInput.value) {
+      quoteSection.textContent = `${quotes[i].quote}`;
+      authorSection.textContent = `${quotes[i].author}`;
+      break;
+    }
+  }
+});
+
+const previousBtn = authorFilter.elements.previous__btn;
+const nextBtn = authorFilter.elements.next__btn;
+
+previousBtn.addEventListener("click", () => {
+  for (let i = 0; i < quotes.length; i++) {
+    if (
+      quotes[i].author === authorInput.value &&
+      quotes[i].quote !== quoteSection.textContent
+    ) {
+      quoteSection.textContent = `${quotes[i].quote}`;
+      authorSection.textContent = `${quotes[i].author}`;
+      break;
+    }
+  }
+});

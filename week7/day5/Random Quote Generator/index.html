@@ -14,7 +14,7 @@
       <p id="author"></p>
     </section>
 
-    <form id="new__quotes">
+    <form name="new__quotes">
       <label for="new__quote">Add a new quote:</label
       ><input type="text" name="new__quote" />
       <label for="new__author">Author:</label
@@ -22,9 +22,18 @@
       <input type="submit" />
     </form>
     <br />
+
     <button class="numChar1">How many characters? (spaces included)</button>
     <button class="numChar2">How many characters? (spaces not included)</button>
     <button class="numWord">How many words?</button>
     <button class="likeBtn">Like</button>
+
+    <form name="author__filter">
+      <label for="chosen__author">Tell me an author:</label>
+      <input type="text" name="chosen__author" />
+      <input type="submit" />
+      <input type="button" name="previous__btn" value="Previous" />
+      <input type="button" name="next__btn" value="Next" />
+    </form>
   </body>
 </html>
