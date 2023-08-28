@@ -1,43 +1,44 @@
-// Exercise 2 : Employees
-
 // Instructions
 
-// Using this array:
+// Create a function that:
 
-// const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
-//              { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
-//              { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
-//              { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
-//              { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
-//              { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
-//              { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}];
-// Using the map() method, push into a new array the firstname of the user and a welcome message. You should get an array that looks like this :
-// const welcomeStudents = ["Hello Bradley", "Hello Chloe", "Hello Jonathan", "Hello Michael", "Hello Robert", "Hello Wes", "Hello Zach"]
+// takes in two strings as two parameters
+// and returns a boolean that indicates whether or not the first string is an anagram of the second string.
+// Some Help
 
-// 2. Using the filter() method, create a new array, containing only the Full Stack Residents.
+// What is an anagram?
+// An anagram is another word or phrase formed by rearranging letters of the first word or phrase.
 
-// 3. Bonus : Chain the filter method with a map method, to return an array containing only the lastName of the Full Stack Residents.
+// Example of anagrams
 
-const users = [
-  { firstName: "Bradley", lastName: "Bouley", role: "Full Stack Resident" },
-  { firstName: "Chloe", lastName: "Alnaji", role: "Full Stack Resident" },
-  { firstName: "Jonathan", lastName: "Baughn", role: "Enterprise Instructor" },
-  { firstName: "Michael", lastName: "Herman", role: "Lead Instructor" },
-  { firstName: "Robert", lastName: "Hajek", role: "Full Stack Resident" },
-  { firstName: "Wes", lastName: "Reid", role: "Instructor" },
-  { firstName: "Zach", lastName: "Klabunde", role: "Instructor" },
-];
+// "Astronomer" is an anagram of "Moon starer"
+// "School master" is an anagram of "The classroom"
+// "The Morse Code" is an anagram of "Here come dots"
 
-let welcomeStudents = users.map((val, i) => `Hello ${users[i].firstName}`);
+// Do we need to consider whitespace?
+// Trim whitespace prior to comparison.
 
-console.log(welcomeStudents);
+const isAnagram = function (strOne, strTwo) {
+  const arrStrOneSorted = [...strOne.toLowerCase().replace(" ", "")].sort();
+  const arrStrTwoSorted = [...strTwo.toLowerCase().replace(" ", "")].sort();
+  let arrCompared = [];
+  if (arrStrOneSorted.length === arrStrTwoSorted.length) {
+    const compareArr = function (arrOne, arrTwo) {
+      for (let i = 0; i < arrOne.length; i++) {
+        arrOne[i] === arrTwo[i]
+          ? arrCompared.push(true)
+          : arrCompared.push(false);
+      }
+    };
+    compareArr(arrStrOneSorted, arrStrTwoSorted);
 
-let fullStackResidents = users.filter((v) => v.role === "Full Stack Resident");
+    return arrCompared.includes(false) ? false : true;
+  } else {
+    return false;
+  }
+};
 
-console.log(fullStackResidents);
-
-let fullStackResidentsLastName = users
-  .filter((v) => v.role === "Full Stack Resident")
-  .map((v, i) => fullStackResidents[i].lastName);
-
-console.log(fullStackResidentsLastName);
+console.log(isAnagram("Astronomer", "Moon starer"));
+console.log(isAnagram("School master", "The classroom"));
+console.log(isAnagram("The Morse Code", "Here come dots"));
+console.log(isAnagram("A word", "Another Word"));
