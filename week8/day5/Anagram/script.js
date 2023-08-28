@@ -31,7 +31,6 @@ const isAnagram = function (strOne, strTwo) {
       }
     };
     compareArr(arrStrOneSorted, arrStrTwoSorted);
-
     return arrCompared.includes(false) ? false : true;
   } else {
     return false;
