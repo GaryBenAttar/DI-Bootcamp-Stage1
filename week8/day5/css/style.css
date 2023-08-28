@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vh;
+  font-size: 62.5%;
+  background-color: rgba(97, 53, 148, 0.6);
+  background-image: url(../img/circuit-pattern.png);
+}
+
+header {
+  position: relative;
+  height: 5rem;
+  width: 100vw;
+  background-color: rgba(32, 214, 93);
+}
+
+.robofriends__logo {
+  position: absolute;
+  margin: 1rem;
+  display: inline-block;
+  font-size: 3rem;
+  font-family: "SEGA LOGO FONT", sans-serif;
+}
+
+form {
+  display: inline-block;
+}
+
+.search__bar {
+  position: absolute;
+  /* top: 1rem; */
+  left: 26rem;
+  display: inline-block;
+  background-color: rgb(187, 187, 187);
+  font-size: 1.5rem;
+  width: 60vw;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.robots__cards {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-grid;
+  grid-template-columns: 33% 33% 33%;
+  width: 80vw;
+  gap: 5px;
+}
+
+.robot {
+  position: absolute;
+  background-image: url(../img/card-pattern.png);
+  background-color: rgba(64, 224, 208);
+  height: 25rem;
+  font-size: 1.5rem;
+  position: relative;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+
+.robot__avatar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15rem;
+  margin: 0.5rem;
+}
+
+.robot__name {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 1.7rem;
+  margin: 0.5rem;
+}
+
+.robot__email {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+.not__displayed {
+  display: none;
+}
