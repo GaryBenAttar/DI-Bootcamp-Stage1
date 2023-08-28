@@ -105,7 +105,7 @@ let robots__cards = document.querySelectorAll(".robot");
 
 form.addEventListener("keyup", (e) => {
   let resultRobots = robots.filter(
-    (v) => v.name.search(searchInput.value) != -1
+    (v) => v.name.search(new RegExp(searchInput.value, "i")) != -1
   );
   console.log(resultRobots);
 
