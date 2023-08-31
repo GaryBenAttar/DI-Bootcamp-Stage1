@@ -11,3 +11,5 @@
 
 // When you click the Send button, the form will be submitted with a GET method. (you can use the same HTML file for the action url)
 // Where will the sent data appear?
+
+// The date will appear in the URL
