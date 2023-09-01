@@ -62,11 +62,12 @@ function searchGIF(e) {
     // Delete button feature:
 
     deleteBtns.push(deleteBtn);
-    for (let i = 0; i < deleteBtns.length; i++) {
-      deleteBtns[i].addEventListener("click", () => {
-        deleteBtns[i].parentNode.remove();
+
+    deleteBtns.forEach((v) => {
+      v.addEventListener("click", () => {
+        v.parentNode.remove();
       });
-    }
+    });
   }
 }
 
