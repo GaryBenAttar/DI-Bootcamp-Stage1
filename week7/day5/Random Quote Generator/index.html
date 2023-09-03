@@ -4,36 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
     <title>Week 7 Day 5 Random Quote Generator</title>
   </head>
   <body>
-    <button class="generate__quote">Generate Quote</button>
-    <section id="quote__box">
-      <q id="quote"></q>
-      <p id="author"></p>
-    </section>
+    <div class="style__box">
+      <button class="generate__quote">Generate Quote</button>
+      <section id="quote__box">
+        <q id="quote"></q>
+        <p id="author"></p>
+      </section>
 
-    <form name="new__quotes">
-      <label for="new__quote">Add a new quote:</label
-      ><input type="text" name="new__quote" />
-      <label for="new__author">Author:</label
-      ><input type="text" name="new__author" />
-      <input type="submit" />
-    </form>
-    <br />
+      <form name="new__quotes" class="new__quote">
+        <label for="new__quote">Add a new quote: </label
+        ><input type="text" name="new__quote" />
+        <label for="new__author">Author: </label
+        ><input type="text" name="new__author" />
+        <input type="submit" value="Submit" class="submit__btn" />
+      </form>
+      <br />
 
-    <button class="numChar1">How many characters? (spaces included)</button>
-    <button class="numChar2">How many characters? (spaces not included)</button>
-    <button class="numWord">How many words?</button>
-    <button class="likeBtn">Like</button>
+      <button class="numChar1">How many characters? (spaces included)</button>
+      <button class="numChar2">
+        How many characters? (spaces not included)
+      </button>
+      <button class="numWord">How many words?</button>
+      <button class="likeBtn">Like</button>
 
-    <form name="author__filter">
-      <label for="chosen__author">Tell me an author:</label>
-      <input type="text" name="chosen__author" />
-      <input type="submit" />
-      <input type="button" name="previous__btn" value="Previous" />
-      <input type="button" name="next__btn" value="Next" />
-    </form>
+      <form name="author__filter" class="author__filter">
+        <label for="chosen__author">Tell me an author: </label>
+        <input type="text" name="chosen__author" />
+        <input type="submit" value="Submit" class="submit__btn" />
+      </form>
+      <button class="previous__button">Previous</button>
+      <button class="next__button">Next</button>
+    </div>
   </body>
 </html>

@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  color: rgb(140, 140, 140);
+
+  background-color: rgb(184, 146, 104);
+}
+
+.style__box {
+  background-color: rgb(220, 192, 156);
+  width: 80vw;
+  height: 80vh;
+  padding: 2rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.generate__quote {
+  border: none;
+  background-color: rgb(69, 179, 148);
+
+  padding: 0.7rem;
+
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 1.2rem;
+  color: white;
+}
+
+#quote__box {
+  position: relative;
+  top: 4rem;
+}
+
+#quote {
+  font-size: 3rem;
+}
+
+#author {
+  font-size: 2rem;
+  color: rgb(69, 179, 148);
+  position: absolute;
+  right: 5rem;
+}
+
+button {
+  position: relative;
+  top: 10rem;
+
+  border: none;
+  background-color: rgb(69, 179, 148);
+
+  padding: 0.5rem;
+
+  font-size: 0.8rem;
+  color: white;
+}
+
+button:hover,
+.submit__btn:hover,
+.generate__quote:hover {
+  cursor: pointer;
+  background-color: rgb(48, 123, 102);
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.new__quote {
+  position: absolute;
+  top: 17rem;
+}
+
+.author__filter {
+  position: absolute;
+  top: 14rem;
+  width: 70vw;
+}
+
+.submit__btn {
+  border: none;
+  background-color: rgb(69, 179, 148);
+
+  padding: 0.5rem;
+
+  font-size: 0.8rem;
+  color: white;
+}

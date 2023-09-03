@@ -92,8 +92,6 @@ const quoteBtn = document.querySelector(".generate__quote");
 let randomId = Math.trunc(Math.random() * quotes.length);
 let idTracker = {};
 
-quoteBtn.addEventListener("click", generateQuote);
-
 function generateQuote() {
   idTracker = quotes[randomId];
 
@@ -104,6 +102,10 @@ function generateQuote() {
   quoteSection.textContent = `${quotes[randomId].quote}`;
   authorSection.textContent = `${quotes[randomId].author}`;
 }
+
+generateQuote();
+
+quoteBtn.addEventListener("click", generateQuote);
 
 // Part II:
 
@@ -177,18 +179,17 @@ authorFilter.addEventListener("submit", (e) => {
   }
 });
 
-const previousBtn = authorFilter.elements.previous__btn;
-const nextBtn = authorFilter.elements.next__btn;
+const previousBtn = document.querySelector(".previous__button");
+const nextBtn = document.querySelector(".next__button");
 
 previousBtn.addEventListener("click", () => {
-  for (let i = 0; i < quotes.length; i++) {
-    if (
-      quotes[i].author === authorInput.value &&
-      quotes[i].quote !== quoteSection.textContent
-    ) {
-      quoteSection.textContent = `${quotes[i].quote}`;
-      authorSection.textContent = `${quotes[i].author}`;
-      break;
-    }
-  }
+  quoteSection.textContent = `${quotes[idTracker.id - 1].quote}`;
+  authorSection.textContent = `${quotes[idTracker.id - 1].author}`;
+  idTracker = quotes[idTracker.id - 1];
+});
+
+nextBtn.addEventListener("click", () => {
+  quoteSection.textContent = `${quotes[idTracker.id + 1].quote}`;
+  authorSection.textContent = `${quotes[idTracker.id + 1].author}`;
+  idTracker = quotes[idTracker.id + 1];
 });

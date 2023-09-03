@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%;
+  background-image: url("../img/swcrawl3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.character__box {
+  border: solid yellow;
+  border-radius: 2rem;
+
+  position: absolute;
+  top: 40vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 50rem;
+  height: 20rem;
+
+  color: white;
+}
+
+.find__btn {
+  border: solid yellow;
+  border-radius: 0.5rem;
+
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 0.5rem;
+  width: 10rem;
+
+  background-color: rgb(189, 189, 189);
+
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.find__btn:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.character__name {
+  font-size: 2rem;
+  font-weight: 700;
+
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.character__details {
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
