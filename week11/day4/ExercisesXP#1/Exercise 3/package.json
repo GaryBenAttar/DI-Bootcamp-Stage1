@@ -1,0 +1,15 @@
+{
+  "name": "exercise-3",
+  "version": "1.0.0",
+  "description": "Week 11 Day 4 Exercises XP#1 Exercise 3",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serverExpress.js"
+  },
+  "author": "Gary Ben Attar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

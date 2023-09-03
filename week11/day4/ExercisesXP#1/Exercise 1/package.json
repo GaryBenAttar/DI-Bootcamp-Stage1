@@ -1,0 +1,12 @@
+{
+  "name": "exercise-1",
+  "version": "1.0.0",
+  "description": "Week 11 Day 4 Exercises XP#1 Exercise 1",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node-server/myserver.js"
+  },
+  "author": "Gary Ben Attar",
+  "license": "ISC"
+}
