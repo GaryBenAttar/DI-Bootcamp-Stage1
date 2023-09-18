@@ -103,7 +103,7 @@ const form = document.forms[0];
 const searchInput = form.elements.search;
 let robots__cards = document.querySelectorAll(".robot");
 
-form.addEventListener("keyup", (e) => {
+searchInput.addEventListener("keyup", (e) => {
   let resultRobots = robots.filter(
     (v) => v.name.search(new RegExp(searchInput.value, "i")) != -1
   );
