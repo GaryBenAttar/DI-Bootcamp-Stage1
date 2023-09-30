@@ -1,0 +1,9 @@
+[
+  { "emoji": "😀", "name": "Smile" },
+  { "emoji": "🐶", "name": "Dog" },
+  { "emoji": "🌮", "name": "Taco" },
+  { "emoji": "📂", "name": "Folder" },
+  { "emoji": "💰", "name": "Money" },
+  { "emoji": "🏠", "name": "House" },
+  { "emoji": "✈️", "name": "Plane" }
+]

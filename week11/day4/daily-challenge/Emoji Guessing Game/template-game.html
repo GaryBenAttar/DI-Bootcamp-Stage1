@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Emoji Guessing Game</title>
+  </head>
+  <body>
+    <div class="app container-col">
+      <h1>Emoji Guessing Game</h1>
+      <p class="random-emoji">{%EMOJI%}</p>
+      <form>
+        <select name="choice">
+          <option value="{%NAME-1%}">{%NAME-1%}</option>
+          <option value="{%NAME-2%}">{%NAME-2%}</option>
+          <option value="{%NAME-3%}">{%NAME-3%}</option>
+        </select>
+        <input type="submit" value="Guess" />
+      </form>
+
+      <h2>Your score:</h2>
+    </div>
+    <script async src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+}
+
+.container-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem;
+}
+
+button {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-left: 2rem;
+}
