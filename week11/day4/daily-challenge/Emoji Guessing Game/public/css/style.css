@@ -12,6 +12,11 @@ body {
   font-size: 1rem;
 }
 
+.container {
+  display: flex;
+  gap: 3rem;
+}
+
 .container-col {
   display: flex;
   flex-direction: column;
@@ -30,4 +35,22 @@ button {
 
 .random-emoji {
   font-size: 30px;
+}
+
+.leaderboard {
+  font-size: 1.8rem;
+}
+
+.leaderboard {
+  table-layout: fixed;
+  border: solid 0.1rem black;
+  border-collapse: collapse;
+  width: 40vw;
+}
+
+th,
+tr,
+td {
+  width: 50%;
+  border: solid 0.1rem black;
 }

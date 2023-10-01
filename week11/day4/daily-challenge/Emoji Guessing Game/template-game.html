@@ -9,9 +9,10 @@
   <body>
     <div class="app container-col">
       <h1>Emoji Guessing Game</h1>
-      <p class="random-emoji">{%EMOJI%}</p>
-      <form>
-        <select name="choice" required>
+      <form method="post">
+        <input type="text" name="user" placeholder="Player Name" /><br />
+        <p class="random-emoji">{%EMOJI%}</p>
+        <select name="choice">
           <option value="{%NAME-1%}">{%NAME-1%}</option>
           <option value="{%NAME-2%}">{%NAME-2%}</option>
           <option value="{%NAME-3%}">{%NAME-3%}</option>
@@ -19,7 +20,10 @@
         <button type="submit">Guess</button>
       </form>
 
-      <h2>Your score:</h2>
+      <h2>{%RESULT%}</h2>
+      <h2>{%HIGHEST_SCORE%}</h2>
+
+      <button><a href="/leaderboard">Leaderboard</a></button>
     </div>
   </body>
 </html>
