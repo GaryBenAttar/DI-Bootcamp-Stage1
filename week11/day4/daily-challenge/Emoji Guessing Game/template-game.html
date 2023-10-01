@@ -11,16 +11,15 @@
       <h1>Emoji Guessing Game</h1>
       <p class="random-emoji">{%EMOJI%}</p>
       <form>
-        <select name="choice">
+        <select name="choice" required>
           <option value="{%NAME-1%}">{%NAME-1%}</option>
           <option value="{%NAME-2%}">{%NAME-2%}</option>
           <option value="{%NAME-3%}">{%NAME-3%}</option>
         </select>
-        <input type="submit" value="Guess" />
+        <button type="submit">Guess</button>
       </form>
 
       <h2>Your score:</h2>
     </div>
-    <script async src="/js/script.js"></script>
   </body>
 </html>

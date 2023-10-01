@@ -1,4 +1,5 @@
 const fs = require("fs");
+const bp = require("body-parser");
 
 const data = fs.readFileSync(`${__dirname}/data.json`, "utf-8");
 const dataObj = JSON.parse(data);
@@ -6,6 +7,7 @@ const dataObj = JSON.parse(data);
 const tempGame = fs.readFileSync(`${__dirname}/template-game.html`, "utf-8");
 
 const express = require("express");
+const exp = require("constants");
 const app = express();
 const port = 3000;
 
@@ -13,15 +15,16 @@ app.listen(port, () => console.log(`Listening on port: ${port}`));
 app.use(express.static("public"));
 app.use(express.json());
 
+let randNum1;
+let randNum2;
+let randNum3;
+
 const replaceTemplate = function (temp, obj) {
-  const randNum1 = Math.trunc(Math.random() * dataObj.length);
-  let randNum2;
+  randNum1 = Math.trunc(Math.random() * dataObj.length);
 
   do {
     randNum2 = Math.trunc(Math.random() * dataObj.length);
   } while (randNum2 === randNum1);
-
-  let randNum3;
 
   do {
     randNum3 = Math.trunc(Math.random() * dataObj.length);
@@ -40,10 +43,8 @@ app.get("/emojis", (req, res) => {
   res.send(dataHtml);
 });
 
-let choice;
-
 app.post("/emojis", (req, res) => {
-  choice = req.body.choice;
+  const choice = req.body;
   res.status(201);
   console.log(choice);
 });

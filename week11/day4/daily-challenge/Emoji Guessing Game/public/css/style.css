@@ -27,3 +27,7 @@ button {
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-left: 2rem;
 }
+
+.random-emoji {
+  font-size: 30px;
+}
