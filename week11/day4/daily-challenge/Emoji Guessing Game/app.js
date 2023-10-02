@@ -47,14 +47,15 @@ const replaceTempGame = function (temp, user) {
 
   // Displaying the emoji and answers in the HTML
 
-  const highScore = `${user}'s highest score = ${userHighestScore}`;
+  const highScore = `${player}'s highest score = ${userHighestScore}`;
 
   let output = temp.replace(/{%EMOJI%}/g, emojisObj[randNum1].emoji);
   output = output.replace(/{%NAME-1%}/g, emojisObj[randNum1].name);
   output = output.replace(/{%NAME-2%}/g, emojisObj[randNum2].name);
   output = output.replace(/{%NAME-3%}/g, emojisObj[randNum3].name);
   output = output.replace(/{%RESULT%}/g, result);
-  output = output.replace(/{%HIGHEST_SCORE%}/g, highScore);
+  if (player) output = output.replace(/{%HIGHEST_SCORE%}/g, highScore);
+  else output = output.replace(/{%HIGHEST_SCORE%}/g, "");
 
   return output;
 };
@@ -79,14 +80,13 @@ app.post("/emojis", (req, res) => {
 
   if (playerObj) {
     userHighestScore = playerObj.score;
-    console.log(usersObj);
   } else {
     playerObj = {
       username: player,
       score: 0,
     };
     usersObj.push(playerObj);
-    console.log(usersObj);
+
     userHighestScore = playerObj.score;
   }
 
@@ -96,7 +96,6 @@ app.post("/emojis", (req, res) => {
     if (userScore > userHighestScore) {
       userHighestScore = userScore;
       playerObj.score = userHighestScore;
-      console.log(usersObj);
     }
 
     result = `You guessed correctly! Score: ${userScore}`;
@@ -130,7 +129,6 @@ const replaceTempLeaderboard = function (temp) {
   let sortedUsers = usersObj.sort((a, b) => b.score - a.score);
 
   const cards = sortedUsers.map((v) => replaceTempUsercard(card, v));
-  console.log(cards);
 
   let output = temp.replace(/{%USER_CARD%}/g, cards);
   return output;
